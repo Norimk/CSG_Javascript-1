@@ -42,7 +42,10 @@ function draw() {
   xJos = constrain(xJos,0,width - celGrootte);
   yJos = constrain(yJos,0,height - celGrootte);
   
-  image(frame,xJos,yJos);
+  for(var JOS= 0; JOS < aantalBeeldjes; JOS++) {
+    image(frame,xJos,yJos);
+  }
+  
 }
 
 function tekenRaster() {
