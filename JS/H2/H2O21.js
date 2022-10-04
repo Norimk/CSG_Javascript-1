@@ -54,5 +54,5 @@ function draw() {
   cirkel.controleerRaak();
   cirkel.teken();
 
-  text(cirkel.aantalRaak, 30,30);
+  text(cirkel.aantalRaak, 30,50);
 }
