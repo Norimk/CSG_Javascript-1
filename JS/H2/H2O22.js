@@ -5,10 +5,11 @@ var bal = {
   y: 0,
   snelheidX: 8,
   snelheidY: 5,
-  demping: 1.0,
+  demping: 0.90,
+  versnelling: 0.2,
   
   beweeg() {
-    
+    this.snelheidY += this.versnelling
     this.x += this.snelheidX;
     this.y += this.snelheidY;
     
@@ -16,8 +17,9 @@ var bal = {
       this.snelheidX *= -this.demping;
     }
     
-    if (this.y <= this.straal || this.y >= canvas.height - this.straal) {
+    if (this.y >= canvas.height - this.straal) {
       this.snelheidY *= -this.demping;
+      this.y = canvas.height - this.straal;
       this.snelheidX *= this.demping;
     }
   },
@@ -36,7 +38,7 @@ function setup() {
   background(0,0,75,1);
   noStroke();
   textFont("Verdana");
-  bal.straal = bal.diameter/2;
+  bal.straal = bal.diameter / 2;
   bal.x = bal.diameter;
   bal.y = bal.x;
 }
