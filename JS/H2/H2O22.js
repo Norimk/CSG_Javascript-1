@@ -5,7 +5,7 @@ var bal = {
   y: 0,
   snelheidX: 8,
   snelheidY: 5,
-  demping: 0.90,
+  demping: 0.85,
   versnelling: 0.2,
   
   beweeg() {
