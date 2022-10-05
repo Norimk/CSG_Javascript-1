@@ -13,7 +13,8 @@ var dobbelSteen = {
     this.ogen = floor(random(0,6)) + 1;
     this.R = round(random(0,255));
     this.G = round(random(0,255));
-    this.B = round(random(0,255));    
+    this.B = round(random(0,255)); 
+    this.totaal += this.ogen; 
   },
   
   teken() {
@@ -50,6 +51,9 @@ function draw() {
   background('lightcyan');
   if (mouseIsPressed) {
     dobbelSteen.gooi();
+  }
+  if (mouseIsPressed) {
+    dobbelSteen.teken();
   }
   dobbelSteen.teken();
   text("totaal: "+dobbelSteen.totaal,0,canvas.height / 2,canvas.width,canvas.height / 2);
