@@ -55,5 +55,5 @@ function draw() {
   boom4.groei();
   boom5.groei();
 
-  boom1
+  boom1.kleur()
 }

@@ -1,11 +1,13 @@
-var raster = {
-  aantalRijen: 6,
-  aantalKolommen: 9,
-  celGrootte: null,
+class Raster {
+  constructor(r,k) {
+    this.aantalRijen = r;
+    this.aantalKolommen = k;
+    this.celGrootte = null;
+  }
   
   berekenCelGrootte() {
     this.celGrootte = canvas.width/this.aantalKolommen;
-  },
+  }
   teken() {
     push();
     noFill();
@@ -102,6 +104,10 @@ function setup() {
   textSize(90);
   raster.berekenCelGrootte();
   
+  raster = new Raster(6,9);
+  
+  raster.berekenCelGrootte();
+
   eve = new Jos();
   eve.stapGrootte = 1*raster.celGrootte;
   for (var b = 0;b < 6;b++) {
