@@ -10,7 +10,8 @@ class Knikker {
   }
   
   gaNaarMuis(muisX,muisY) {
-
+    this.x+=(muisX-this.x)*0.03;
+    this.y+=(muisY-this.y)*0.03;
   }  
 
   beweeg() {

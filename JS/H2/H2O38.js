@@ -52,4 +52,7 @@ function draw() {
       knikkerVerzameling[i].beweeg();
     }
   }
+  if (mouseIsPressed) {
+    knikkerVerzameling.push(new Knikker(mouseX,mouseY,'red'));
+  }
 }
