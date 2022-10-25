@@ -56,22 +56,25 @@ class Jos {
   }
   
   staatOp(bommenLijst) {
-    for (var b = 0;b < bommenLijst.length;b++) {
-      if (bommenLijst[b].x == this.x && bommenLijst[b].y == this.y) {
+    for(var b = 0; b < bommenLijst.length; b++){
+      if(bommenLijst[b].x == this.x && bommenLijst[b].y == this.y){
         this.staOpBom = true;
       }
     }
     return this.staOpBom;
-  }  
+  }      
   
   toon() {
     image(this.animatie[this.frameNummer],this.x,this.y,raster.celGrootte,raster.celGrootte);
   }
+
+
 }
 
 function preload() {
   brug = loadImage("images/backgrounds/dame_op_brug_1800.jpg");
   bomPlaatje = loadImage("images/sprites/bom_100px.png");
+  lucht = loadImage("images/backgrounds/lucht_1.jpg")
 }
 
 var bommenArray = [];
@@ -82,13 +85,11 @@ function setup() {
   frameRate(10);
   textFont("Verdana");
   textSize(90);
-  
-  raster = new Raster(6,9);
-  
+  raster = new Raster(12,18);
   raster.berekenCelGrootte();
   bom1 = new Bom();
 
-  for (var b = 0;b < 10;b++) {
+  for (var b = 0;b < 75;b++) {
     bommenArray.push(new Bom());
   }
   
@@ -113,8 +114,7 @@ function setup() {
 }
 
 function draw() {
-  background(brug);
-  raster.teken();
+  background(lucht);
   bom1.toon();
 
   for (var b = 0;b < bommenArray.length;b++) {
