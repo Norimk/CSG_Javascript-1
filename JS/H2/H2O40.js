@@ -56,7 +56,11 @@ class Jos {
   }
   
   staatOp(bommenLijst) {
-
+    for (var b = 0;b < bommenLijst.length;b++) {
+      if (bommenLijst[b].x == this.x && bommenLijst[b].y == this.y) {
+        this.staOpBom = true;
+      }
+    }
     return this.staOpBom;
   }  
   
@@ -83,6 +87,10 @@ function setup() {
   
   raster.berekenCelGrootte();
   bom1 = new Bom();
+
+  for (var b = 0;b < 10;b++) {
+    bommenArray.push(new Bom());
+  }
   
   eve = new Jos();
   eve.stapGrootte=1*raster.celGrootte;
@@ -98,12 +106,20 @@ function setup() {
   bob = new Vijand(600,400);
   bob.stapGrootte = 1*eve.stapGrootte;
   bob.sprite = loadImage("images/sprites/Bob100px/Bob.png");  
+
+
+
+  
 }
 
 function draw() {
   background(brug);
   raster.teken();
   bom1.toon();
+
+  for (var b = 0;b < bommenArray.length;b++) {
+    bommenArray[b].toon();
+  }
 
   if (eve.aanDeBeurt) {
     eve.beweeg();
