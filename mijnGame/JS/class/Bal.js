@@ -1,5 +1,5 @@
 class Bal {
-    constructor() {
+    constructor() { 
         this.diameter = 75;
         this.straal = this.diameter / 2;
         this.x = random(this.straal,canvas.width - this.straal);
